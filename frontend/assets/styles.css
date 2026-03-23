@@ -1,0 +1,407 @@
+/* ============================================================
+   AI Career Advisor — Professional Design System
+   ============================================================ */
+
+/* ---------- Root Variables ---------- */
+:root {
+    --bg-primary: #0B1120;
+    --bg-card: #131C31;
+    --bg-card-hover: #1A2540;
+    --border-subtle: #1E2D4A;
+    --accent: #3B82F6;
+    --accent-light: #60A5FA;
+    --accent-muted: rgba(59, 130, 246, 0.12);
+    --text-primary: #E2E8F0;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --success: #10B981;
+    --success-bg: rgba(16, 185, 129, 0.1);
+    --warning: #F59E0B;
+    --warning-bg: rgba(245, 158, 11, 0.1);
+    --error: #EF4444;
+    --error-bg: rgba(239, 68, 68, 0.1);
+    --radius: 10px;
+    --transition: 0.2s ease;
+}
+
+/* ---------- Global ---------- */
+.main .block-container {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+    max-width: 1100px;
+}
+
+h1 {
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--text-primary) !important;
+    font-size: 2rem !important;
+    margin-bottom: 0.25rem !important;
+}
+
+h2 {
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    font-size: 1.35rem !important;
+    letter-spacing: -0.01em !important;
+}
+
+h3 {
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+    font-size: 1.1rem !important;
+}
+
+h4 {
+    font-weight: 600 !important;
+    color: var(--text-secondary) !important;
+    font-size: 0.95rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em !important;
+}
+
+p, li, span {
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+a {
+    color: var(--accent-light) !important;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: var(--accent) !important;
+}
+
+hr {
+    border-color: var(--border-subtle) !important;
+    margin: 1.5rem 0 !important;
+}
+
+/* ---------- Sidebar ---------- */
+[data-testid="stSidebar"] {
+    background-color: #0A0F1E;
+    border-right: 1px solid var(--border-subtle);
+}
+
+[data-testid="stSidebar"] h1 {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
+}
+
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ---------- Cards (via st.markdown) ---------- */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: border-color var(--transition), background var(--transition);
+}
+
+.card:hover {
+    border-color: var(--accent);
+    background: var(--bg-card-hover);
+}
+
+.card h3 {
+    margin: 0 0 0.5rem 0 !important;
+    font-size: 1rem !important;
+    color: var(--text-primary) !important;
+}
+
+.card p {
+    margin: 0 !important;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+
+/* ---------- Feature Card variant ---------- */
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.75rem 1.5rem;
+    text-align: center;
+    transition: border-color var(--transition), transform var(--transition);
+    height: 100%;
+}
+
+.feature-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.feature-card .feature-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 50%;
+    background: var(--accent-muted);
+    color: var(--accent-light);
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-card h3 {
+    font-size: 0.95rem !important;
+    margin: 0 0 0.5rem 0 !important;
+}
+
+.feature-card p {
+    font-size: 0.82rem;
+    margin: 0 !important;
+}
+
+/* ---------- Step indicator ---------- */
+.step-bar {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 1.5rem 0;
+}
+
+.step-item {
+    flex: 1;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    position: relative;
+    transition: background var(--transition);
+}
+
+.step-item:first-child {
+    border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.step-item:last-child {
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.step-item.active {
+    background: var(--accent-muted);
+    border-color: var(--accent);
+}
+
+.step-number {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    margin-bottom: 0.25rem;
+}
+
+.step-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* ---------- Metric / KPI ---------- */
+.kpi-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.kpi-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--accent-light);
+    margin: 0;
+}
+
+.kpi-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+}
+
+/* ---------- Status badge ---------- */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.badge-success {
+    background: var(--success-bg);
+    color: var(--success);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.badge-warning {
+    background: var(--warning-bg);
+    color: var(--warning);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.badge-error {
+    background: var(--error-bg);
+    color: var(--error);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* ---------- File uploader ---------- */
+[data-testid="stFileUploader"] {
+    border: 2px dashed var(--border-subtle) !important;
+    border-radius: var(--radius) !important;
+    padding: 1rem !important;
+    transition: border-color var(--transition);
+}
+
+[data-testid="stFileUploader"]:hover {
+    border-color: var(--accent) !important;
+}
+
+[data-testid="stFileUploader"] label {
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+}
+
+/* ---------- Buttons ---------- */
+.stButton > button {
+    background: var(--accent) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.6rem 1.5rem !important;
+    font-weight: 600 !important;
+    font-size: 0.88rem !important;
+    letter-spacing: 0.01em !important;
+    transition: background var(--transition), transform var(--transition) !important;
+}
+
+.stButton > button:hover {
+    background: var(--accent-light) !important;
+    transform: translateY(-1px) !important;
+}
+
+.stButton > button:active {
+    transform: translateY(0) !important;
+}
+
+/* ---------- Expanders ---------- */
+[data-testid="stExpander"] {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: var(--radius) !important;
+}
+
+[data-testid="stExpander"] summary {
+    font-weight: 600 !important;
+    color: var(--text-primary) !important;
+}
+
+/* ---------- Results container ---------- */
+.results-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    margin: 1rem 0;
+}
+
+.results-container h2 {
+    color: var(--text-primary) !important;
+    margin-top: 0 !important;
+}
+
+.results-container p {
+    color: var(--text-secondary);
+}
+
+/* ---------- Empty state ---------- */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--text-muted);
+}
+
+.empty-state h3 {
+    color: var(--text-secondary) !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.empty-state p {
+    font-size: 0.9rem;
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+/* ---------- Info header ---------- */
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.info-header .label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.info-header .value {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    text-align: center;
+    padding: 1.5rem 0 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+}
+
+/* ---------- Plotly overrides ---------- */
+.js-plotly-plot .plotly .modebar {
+    background: transparent !important;
+}
+
+/* ---------- Tabs ---------- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: var(--text-muted) !important;
+    font-weight: 500 !important;
+    border-bottom: 2px solid transparent !important;
+    padding: 0.75rem 1.25rem !important;
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--accent-light) !important;
+    border-bottom-color: var(--accent) !important;
+}

@@ -1,0 +1,41 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+scripts/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+backend/.env
+frontend/.env
+
+# Temporary logs
+*.log
+*_log.txt
+pip_error.txt
+py_versions.txt
+
+# Streamlit
+.streamlit/
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Data/Cache folders
+backend/data/
+.pytest_cache/
+.mypy_cache/
+.tox/
+build/
+dist/
+*.egg-info/

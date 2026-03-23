@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+crewai
+crewai-tools
+langchain-groq
+pdfplumber
+python-docx
+python-multipart
