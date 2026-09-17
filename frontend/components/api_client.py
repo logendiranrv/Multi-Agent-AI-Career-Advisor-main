@@ -12,7 +12,8 @@ def _api_url(path: str) -> str:
 def check_health() -> bool:
     """Return True if the backend API is reachable."""
     try:
-        resp = requests.get(_api_url("/health"), timeout=5)
+        # Increased timeout to 30s to handle Render free tier cold starts
+        resp = requests.get(_api_url("/health"), timeout=30)
         return resp.status_code == 200
     except requests.ConnectionError:
         return False
