@@ -4,14 +4,14 @@ from crewai import Agent, Task, Crew, Process, LLM
 
 def get_llm():
     """
-    Returns a LangChain-compatible ChatGroq LLM instance
-    that works with CrewAI agents.
+    Returns a CrewAI LLM instance configured for Groq.
     """
+    model_name = settings.GROQ_MODEL.strip()
+    if not model_name.startswith("groq/"):
+        model_name = f"groq/{model_name}"
 
-    llm = LLM(
-        model=f"groq/{settings.GROQ_MODEL}",
+    return LLM(
+        model=model_name,
         temperature=0.1,
         api_key=settings.GROQ_API_KEY,
-    )
-
-    return llm
+    )
